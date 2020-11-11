@@ -1,0 +1,46 @@
+<%- include('partials/head.ejs') %>
+
+<body>
+   <%- include('partials/nav.ejs')%>
+   
+   <div class="container">
+      <hr>
+      <a href="/post" style="text-decoration: none;"><button type="button" class="btn btn-outline-dark btn-lg btn-block">Criar Anuncio</button></a>
+      <hr>
+
+   <div class="row row-cols-1 row-cols-md-2">
+         <% posts.forEach((post)=>{ %>
+            <div class="card">
+               <div class="card-body">
+                  <h3 class="card-title"><%= post.title %></h3>
+                  
+                  <h6 class="card-text">Descrição:</h6>
+                  <p class="card-text"><%= post.description %></p>                
+                  <h6 class="card-text">Contato:</h6>
+                  <p class="card-text">Telefone:<%= post.phone %> Email: <%= post.email %></p>                
+                  <h6 class="card-text">Endereço:</h6>
+                  <p class="card-text"><%= post.address %></p>
+                  <h6 class="card-text">Preço:</h6>
+                  <p class="card-text">R$ <%= post.price %></p>
+                  <hr>
+                  <form action="/post/delete" method="POST">
+                     <input type="password" class="col-sm-2 col-form-label col-form-label" name="password" placeholder="Senha">
+                     <input type="hidden" name="id" value="<%= post.id %>">
+                     <button class="btn btn-danger" type="submit">DELETAR</button>
+                  </form>
+                  
+               </div>
+            </div>
+         <% }); %>
+      </div>
+   
+  
+      
+
+</div>
+      
+
+
+</body>
+
+<%- include('partials/footer.ejs') %>

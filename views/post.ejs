@@ -1,0 +1,42 @@
+<%- include('partials/head.ejs') %>
+
+<body>
+    <%- include('partials/nav.ejs') %>
+    <br>
+    <div class="container">
+        <form method="POST" action="/post/savepost">
+            <label>Título:</label>
+                <textarea name="title" class="form-control"></textarea>
+            <hr>
+            <label>Descrição:</label>
+                <textarea name="description" class="form-control"></textarea>
+            <hr>
+            <hr>
+            <label>Preço:</label>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">R$</span>
+                </div>
+                <input type="text" class="form-control" name="price">
+              </div>
+            <hr>
+            <label>Contato:</label>
+            <br>
+                <label  class="col-sm-2 col-form-label col-form-label-sm">Email:</label>
+                <input type="email" placeholder="ex@example.com" name="email" class="col-sm-2 col-form-label col-form-label">
+                <label  class="col-sm-2 col-form-label col-form-label-sm">Telefone:</label>
+                <input type="tel" name="phone" placeholder="(00)00000-0000" class="col-sm-2 col-form-label col-form-label">
+            <hr>
+            <label>Endereço:</label>
+                <input type="text" class="form-control" placeholder="Rua abc, 1234" name="address">
+                <hr>
+            <label>Senha:</label>
+                <input type="password" class="form-control" name="password" placeholder="Cadastre sua senha para exclusão de post">
+                <hr>
+                <button type="submit" class="btn btn-dark btn-lg btn-block">Postar</button>
+          
+        </form>
+    </div>
+</body>
+
+<%- include('partials/footer.ejs') %>
